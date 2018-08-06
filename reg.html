@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+      <li><a href="#"></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="reg.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Log in here</h2>
+  <form action="success.html">
+    <div class="form-group">
+      <label for="email">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="DOB">Date Of Birth:</label>
+      <div class="bfh-datepicker">
+        <input type="date" class="form-control" id="dob" placeholder="Enter DOB" name="dob" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="MobNo">Mobile Number:</label>
+      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="xxxx-xxx-xxxx" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" name="confirm_password" required>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Register">
+  </form>
+</div>
+
+</body>
+
+<!--VALIDATING PASSWORD-->
+
+<script type="text/javascript">
+  var password = document.getElementById("password"),confirm_password = document.getElementById("confirm_password");
+  console.log(password);
+  function validatePassword()
+  {
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+    confirm_password.setCustomValidity('');
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+</script>
+
+</html>
